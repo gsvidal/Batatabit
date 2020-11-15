@@ -1,0 +1,34 @@
+
+  header {
+    height: 310px;
+  }
+  .bitcoin-img-container {
+    background: url("../assets/img/bitcoinbaby2x.jpg") center/cover no-repeat;
+  }
+  .plans-container__slider {
+    overflow: hidden;
+    overscroll-behavior: none;
+    scroll-snap-type: none;
+    padding-top: 16px; 
+    padding-left: 20px;
+    padding-right: 10px;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+  .plans-container__card, .plans-container__card--deluxe {
+    margin: 0 10px ;
+  }
+  .plans-container__card--deluxe {
+   width: 85%; 
+   width: 192px;
+  }
+  .wrapper {
+    margin-right: 0px;
+    width: 100%;
+    padding-right: 0;
+    width: 192px;
+  }
+  .plans-container__card, .plans-container__card--deluxe {
+  scroll-snap-align: none ;
+  }
+

@@ -1,0 +1,33 @@
+  header {
+    height: 280px;
+  }
+  .main-table-container {
+    display: flex;
+    justify-content: center;
+  }
+  .main-currency-table,.main-comision-table
+    {
+    width: 350px;
+    margin: 0
+  }
+  .currency-table__title, .comision-table__title {
+    padding-right: 0;
+  }
+  .plans-container__card, .plans-container__card--deluxe {
+    margin: 0 2.5vw ;
+    min-width: 192px;
+    max-width: 300px;
+  }
+  .plans-container__slider {
+    position: relative;
+    left: -18px;
+    justify-content: center;
+    max-width: 960px;
+  }
+  .product-cards__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 898px;   
+    justify-content: space-evenly;    
+    margin: 0 auto; 
+  }

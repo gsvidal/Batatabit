@@ -1,0 +1,496 @@
+/* 
+Orden de las propiedades de los selectores:
+1. Posicionamiento: static, relative, absolute, display, etc
+2. Modelo caja: content(width,height,min/max) , padding, border, margin
+3. Tipografía: font-family, font-size, font-weight, line-height etc.
+4. Visuales: color, background,  border-radius, box-shadows, gradient, etc.
+5. Otros: reglas CSS (calc()), etc. */
+:root {
+  /*Colores*/
+  --bitcoin-orange: #F7931A;
+  --soft-orange: #FFE9D5;
+  --secondary-blue: #1a9af7;
+  --soft-blue: #e7f5ff;
+  --warm-black: #201e1c;
+  --warm-black-1: #282623;
+  --grey: #bababa;
+  --off-white: #faf8f7;
+  --just-white: #fff;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'DM Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 320px;
+  height: 334px;
+  text-align: center;
+  background: linear-gradient(207.8deg, var(--warm-black) 16.69%, var(--bitcoin-orange) 100%);
+}
+header img {
+  width: 150px;
+  height: 24px;
+  margin-top: 60px;
+}
+.header__title-container {
+  width: 90%;
+  min-width: 288px;
+  max-width: 900px;
+  height: 218px;
+  margin-top: 30px;
+}
+.header__title-container h1 {
+  color: var(--just-white);
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+
+}
+.header__title-container p {
+  color: var(--soft-orange);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin-top: 20px;
+}
+.header__title-container .header__button {
+  position: absolute;
+  left: calc(50% - 115px);
+  bottom: -24px;
+  margin-top: 35px;
+  padding: 15px;
+  width: 230px;
+  height: 48px;
+  background-color: var(--off-white);
+  /*Sombra*/
+  box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--warm-black);
+}
+.header__button span {
+  display: inline-block;
+  width: 13px;
+  height: 8px;
+  margin-left: 10px;
+  background-image: url("../assets/icons/down-arrow.svg")
+}
+main {
+  width: 100%;
+  /*El mismo contenido va a definir la altura*/
+  height: auto;
+  background-color: var(--off-white);
+}
+.exchange-container {
+  width: 100%;
+  height: auto;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.exchange-container__title {
+  width: 90%;
+  min-width: 288px;
+  margin: 0 auto;
+}
+.exchange-container__background-img {
+  width: 195px;
+  height: 195px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background: url("../assets/img/Bitcoin.svg") center/cover no-repeat;
+  /*center/cover no-repeat se ponen por buenas prácticas, por si se modifica el contenedor de la imagen, para usar el shorthand colocar de selector solo background: ,al usar position/ size deben ir con el slash*/
+  
+  
+}
+.exchange-container__title h2 {
+  margin-bottom: 30px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: var(--warm-black);
+}
+.exchange-container__title p {
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  color: #757575;
+  ;
+
+}
+.main-currency-table, .main-comision-table {
+  width: 70%;
+  min-width: 235px;
+  max-width: 500px;
+  height: 360px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  color: #B5B0AC;
+
+}
+.currency-table__title, .comision-table__title  {
+
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 2.3rem;
+  color: var(--bitcoin-orange);
+  /* text-align: left; */
+  padding-right: 120px;
+}
+.comision-table__title {
+  color: var(--secondary-blue);
+}
+
+
+.currency-table__container, .comision-table__container {
+  width: 90%;
+  min-width: 230px;
+  max-width: 300px;
+  height: 200px;
+  margin: 0 auto;
+}
+.currency-table__container table, .comision-table__container table {
+  width: 100%;
+  height: 100%;
+  
+}
+.currency-table__container td, .comision-table__container td {
+  width: 50%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+  background-color: var(--just-white);  
+  padding-left: 16px;
+  text-align: left;
+  
+}
+.table--top-left {
+  border-top-left-radius: 8px;
+}
+.table--top-right {
+  border-top-right-radius: 8px;
+} 
+.table--bottom-left {
+  border-bottom-left-radius: 8px;
+} 
+.table--bottom-right {
+  border-bottom-right-radius: 8px;
+} 
+.currency-table__container .table--right, .comision-table__container .table--right {
+  color: #757575;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  text-align: center;
+}
+.comision-table__container .table--right {
+  padding-left: 0;
+}
+.trending-down, .trending-up {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  background: url("../assets/icons/trending-down.svg") center/cover no-repeat
+}
+.trending-up {
+  background: url("../assets/icons/trending-up.svg") center/cover no-repeat
+}
+.currency-table__date, .comision-table__date {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--warm-black);
+  background-color: var(--soft-orange);
+  border-radius: 8px;
+}
+.comision-table__date {
+  background-color: var(--soft-blue);
+}
+/* Seccion2: Beneficios */
+.main-product-detail {
+  position: relative; 
+    /* height: 902px; */
+  padding: 0 16px 30px 16px;
+  font-size: 1.4rem; 
+  font-weight: 500;
+  line-height: 1.8rem;
+  background-color: var(--warm-black);
+  color: var(--just-white);
+
+}
+.main-product-detail .logo-batata {
+  display: inline-block;
+  position: absolute;
+  top: -12px;
+  left: calc(50% - 19px);
+  background: url("../assets/icons/batata.svg") center/cover no-repeat;
+  width: 38px;
+  height: 24px;
+
+}
+.main-product-intro {
+  padding: 17px;
+  text-align: center;
+
+}
+.main-product-intro h2 {
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+  margin-top:47px;
+}
+.main-product-intro p {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  color: #808080;
+}
+.product-detail__card {
+  min-width: 288px;
+  max-width: 400px;
+  padding: 16px 20px 22px 16px;
+  margin: 16px auto;
+  background-color: var(--warm-black-1);
+  border-radius: 4px;
+}
+.product-detail__card span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.product-detail__card .product-card__title {
+  margin: 10px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.product-detail__card .product-card__body {
+  color: #808080;
+}
+/* Insertando iconos a los product-cards */
+.product-detail__card .clock {
+  background: url("../assets/icons/clock.svg") center/cover no-repeat;
+}
+.product-detail__card .eye {
+  background: url("../assets/icons/eye.svg") center/cover no-repeat;
+}
+.product-detail__card .dolar {
+  background: url("../assets/icons/dollar-sign.svg") center/cover no-repeat;
+}
+.product-detail__card .check {
+  background: url("../assets/icons/check-circle.svg") center/cover no-repeat;
+}
+.bitcoin-img-container {
+  width: 100%;
+  min-width: 320px;
+  height: 50vh;
+  background: url("../assets/img/bitcoinbaby.jpg") center/cover no-repeat;    text-align: center;
+}
+/* Esta imagen podría seleccionarse con picture y colocar la version chica para celular y tablet y para desktop ponerle la version x2 */
+.bitcoin-img-container h2 {
+  padding-top: 65px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  color: var(--just-white);
+}
+.main-plans-container {
+  width: 100%;
+  min-width: 320px;
+  /* padding-bottom: 64px; */
+  text-align: center;
+}
+.plans__title {
+  width: 90%;
+  min-width: 288px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.plans__title h2 {
+  padding-top:64px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  color: var(--warm-black);
+}
+.plans__title p {
+  padding-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: #757575;
+}
+/* Scroll horizontal */
+.plans-container__slider {
+  display: flex;
+  /* justify-content: center; */
+  height: 336px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain ;
+  scroll-snap-type: x proximity;
+  padding-top: 16px; 
+  padding-left: 50vw;
+}
+
+.plans-container__card, .plans-container__card--deluxe {
+  position: relative;
+  scroll-snap-align: center ;
+  width: 60%;
+  width: 192px;
+  /* max-width: 300px; */
+  height: 247px;
+  margin: 0 8vw ;
+  margin-bottom: 50px;
+  padding: 0 15px;
+  background-color: var(--just-white);
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px 0px rgba(89, 73, 30, 0.16);
+
+}
+.plans-container__card.card-basic {
+  margin-left: 0;
+}
+
+.recommended, .basic, .deluxe {
+  position: absolute;
+  top: -15px;
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 31px;
+  font-family: "Inter";
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 7px;
+  color: var(--just-white);
+  background-color: var(--bitcoin-orange);
+  border-radius: 8px;
+  /* z-index: 5; */
+}
+.plan-card__title {
+  padding-top: 36px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: black;
+}
+.plan-card__price {
+  padding: 8px 0;
+  font-family: "Inter";
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+  color: black;
+}
+.plan-card__price span {
+  position: relative;
+  top: -29px;
+  left: -4px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.plan-card__saving {
+  font-family: "Inter";
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #757575;
+
+}
+.plan-card__ca--basic, .plan-card__ca--recommended, .plan-card__ca--deluxe {
+  width: 151px;
+  height: 48px;
+  margin-top: 16px;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  color: var(--warm-black);
+  background-color: var(--off-white);
+  border: 2px solid var(--bitcoin-orange);
+  border-radius: 4px;
+  text-align: center;
+}
+.plan-card__ca--basic span, .plan-card__ca--recommended span, .plan-card__ca--deluxe span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("../assets/icons/orange-right-arrow.svg") center/cover no-repeat;
+  vertical-align: middle;
+
+}
+/* Cambiando estilos de los otros planes */
+.basic {
+  background-color: #ffd064;
+}
+.plan-card__ca--basic {
+  border: 2px solid #ffd064;
+}
+.plan-card__ca--basic span {
+  filter:brightness(0) saturate(100%) invert(86%) sepia(85%) saturate(6954%) hue-rotate(311deg) brightness(105%) contrast(103%);
+}
+.deluxe {
+  background-color: #757575;
+  color: #F7931A;
+}
+.plan-card__ca--deluxe {
+  border: 2px solid var(--grey);
+  background-color: #757575;
+  color: #F7931A;
+}
+.plan-card__ca--deluxe span {
+  filter:brightness(0) saturate(100%) invert(96%) sepia(0%) saturate(195%) hue-rotate(139deg) brightness(80%) contrast(86%);
+}
+.plans-container__card--deluxe {
+  background-color: var(--warm-black-1);
+  box-shadow: 0px 0px 8px 6px rgb(247, 147, 26,0.3);
+  margin-right: 0;
+
+}
+.wrapper {
+  padding-right: 88px;
+}
+.plans-container__card--deluxe h3 {
+  color: #757575;
+} .plans-container__card--deluxe .plan-card__price {
+  color: var(--off-white);
+}
+footer {
+  display: flex;
+  width: 100%;
+  height: 150px;
+  background-color: var(--bitcoin-orange);
+
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer .left ul {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  list-style: none;
+}
+footer .left ul li {
+  margin: 10px 0;
+}
+footer .left ul li a {
+  text-decoration: none;
+  color: var(--just-white);
+}
+
+
