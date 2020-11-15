@@ -494,11 +494,14 @@ footer .left ul li a {
 }
 
 .credits {
-  font-family: "Inter";
   display: inline-block;
   position: absolute;
   bottom: 15px;
   left: calc(50% - 42px);
+  font-family: "Inter";
+  font-size: 1.3rem;
+  color: var(--just-white);
+  
 }
 .credits a {
   color: #5900ff;
