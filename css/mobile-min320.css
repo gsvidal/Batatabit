@@ -301,7 +301,7 @@ main {
   width: 100%;
   min-width: 320px;
   height: 50vh;
-  background: url("../assets/img/bitcoinbaby.jpg") center/cover no-repeat;    text-align: center;
+  background: url("https://i.imgur.com/7rL5zv3.jpg") center/cover no-repeat;    text-align: center;
 }
 /* Esta imagen podría seleccionarse con picture y colocar la version chica para celular y tablet y para desktop ponerle la version x2 */
 .bitcoin-img-container h2 {
